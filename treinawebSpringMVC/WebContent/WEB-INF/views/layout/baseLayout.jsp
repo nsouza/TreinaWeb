@@ -20,7 +20,11 @@
 	<div style="width:100%">
 		<tiles:insertAttribute name="header" ignore="false"></tiles:insertAttribute>
 	</div>
+<<<<<<< HEAD
 	<div style="width:100%; margin: 2%;">
+=======
+	<div style="width:100%">
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 		<tiles:insertAttribute name="body" ignore="false"></tiles:insertAttribute>
 	</div>
 	<div style="width:100%">

@@ -1,0 +1,158 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use App\User;
+use App\Models\Admin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+use App\Models\Genre;
+use DB;
+//use App\Http\Traits\VerifyGuards;
+use Validator;
+
+class StandardController extends Controller {
+
+
+	public function loginUser(Request $request) {
+
+		//acesso para usuario cliente
+		$credentials = $this->getCredentials($request);
+
+		if (Auth::guard('web')->attempt($credentials, $request->has('remember'))) {
+			$users = Auth::user();
+			
+			$categories = Category::all();
+			$genres = Genre::all();
+			
+			$products = DB::table('products')
+			->join('product_images', 'products.id', '=', 'product_images.product_id')
+			->select('products.*', 'product_images.ImagePath')
+			->where('products.recommend', '=', 'true')->get();
+			
+			$featureds = $categories->featuredList();
+			
+			return view('home.index', compact('categories','products','genres'));
+			
+			
+			
+
+		} else if (Auth::guard('web_adm')->attempt($credentials, $request->has('remember'))) {
+
+			$users = Auth::guard('web_adm')->user();
+			return view('adm.logged', compact('users'));
+			
+		} else {
+			return redirect()->back()
+				->withErrors(['errors' => 'Não foi possivel validar as informações
+                                    com o email e senha informados', ])
+				->withInput($request->only('email', 'remember'));
+		}
+	}
+
+	protected function getCredentials(Request $request) {
+		return $request->only('email', 'password');
+	}
+
+	protected function sendFailedLoginResponse(Request $request) {
+		return redirect()->back()
+			->withErrors(['errors' => 'Não foi possivel validar as informações
+                    com o email e senha informadors', ])
+			->withInput($request->only('email', 'remember'));
+
+	}
+
+	/**
+	 * Get the failed login message.
+	 *
+	 * @return string
+	 */
+	protected function getFailedLoginMessage() {
+		return Lang::has('auth.failed')
+		? Lang::get('auth.failed')
+		: 'These credentials do not match our records.';
+	}
+
+	public function showRegistrationForm() {
+
+		return view('auth.register');
+	}
+
+	/**
+	 * Get a validator for an incoming registration request.
+	 *
+	 * @param  array  $data
+	 * @return \Illuminate\Contracts\Validation\Validator
+	 */
+	protected function validator(Request $request) {
+		return Validator::make($request->all(), [
+			'name' => 'required|max:255',
+			'email' => 'required|email|max:255|unique:users',
+			'password' => 'required|min:6|confirmed',
+		]);
+	}
+
+	protected function registerUser(Request $request) {
+
+		$validator = $this->validator($request->all());
+
+		if ($validator->fails()) {
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
+
+		if (Auth::guard() == 'web') {
+			return User::create([
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'password' => bcrypt($data['password']),
+			]);
+		} else {
+
+			return Admin::create([
+				'name' => $data['name'],
+				'email' => $data['email'],
+				'password' => bcrypt($data['password']),
+			]);
+		}
+	}
+
+	public function logout(){
+		Auth::guard()->logout();
+		return redirect('/');
+	}
+	
+	
+	
+
+	public function registerUser1(Request $request, User $user) {
+
+		$dadosForm = $request->all();
+
+		//Validar os dados
+		$validator = validator($dadosForm, $user->rules);
+
+		//valida os dados
+		if ($validator->fails()) {
+			return redirect('home.index')
+				->withErrors($validator)
+				->withInput();
+		}
+
+		//faz o insert de dados
+		$insert = User::create($dadosForm);
+
+		//verifica se inseriu com sucesso
+		if ($insert) {
+			return redirect('home.index');
+		} else {
+			return redirect('home.index')
+				->withErrors(['errors' => 'Falha ao cadastrar'])
+				->withInput();
+		}
+	}
+
+}

@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use DB;
+
+class Product extends Model
+{
+    protected $fillable = [
+    	'categories_id',
+        'genres_id',
+        'name',
+    	'description',
+    	'qtd',
+        'price',
+        'featured',
+        'recommend'        
+	];
+    
+    public function images()
+    {
+    	return $this->hasMany('App\Models\ProductImage');
+    }
+    
+    public function category(){
+        return $this->belongsTo('App\Models\Category','id');
+    }
+    
+     public function genre(){
+        return $this->belongsTo('App\Models\Genre','id');
+    }
+    
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag');
+    }
+    
+    
+    public function listProduct($id){
+    
+    	$products = DB::table('products')
+    	->join('product_images', 'products.id', '=', 'product_images.product_id')
+    	->select('products.*', 'product_images.ImagePath')
+    	->where('products.id', '=', $id)
+    	->where('product_images.imgPrincipal', '=', 'true')->get();
+    	
+    	dd($products);
+    	
+    	return $products;
+    
+    }
+    
+    public $rules = [
+    	'categories_id'=> 'required',
+        'genres_id' => 'required',
+        'name' => 'required|unique:categories|max:100',
+    	'description' =>'required',
+    	'qtd' => 'required',
+        'price'  =>'required'
+       
+    ];
+    
+    public $rulesUpdate = [
+    		'categories_id'=> 'required',
+                'genres_id'=> 'required',
+    		'name' => 'required|max:100',
+    		'description' =>'required',
+    		'qtd' => 'required',
+    		'price'  =>'required'
+    
+    ];
+   
+}

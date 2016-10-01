@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;albuns&apos; to &apos;views&apos;&#x0A;- Original project: &apos;treinawebSpringMVC&apos;&#x0A;- Destination element: &apos;views&apos;&#x0A;- Original element: &apos;albuns&apos;" description="Copy folder" element1="WebContent/WEB-INF/views/albuns" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1474555554435" target="/treinawebSpringMVC/WebContent/WEB-INF/views" units="0" version="1.0"/>
+</session>

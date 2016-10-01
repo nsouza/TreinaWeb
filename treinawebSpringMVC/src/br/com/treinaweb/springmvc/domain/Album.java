@@ -1,5 +1,6 @@
 package br.com.treinaweb.springmvc.domain;
 
+<<<<<<< HEAD
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+=======
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -29,7 +37,11 @@ public class Album {
 	
 	@NotNull(message="O nome é obrigatório")
 	@NotEmpty(message="O nome é obrigatório")
+<<<<<<< HEAD
 	@Size(min = 4, max = 10, message="O valor deve estar entre 4 e 10")
+=======
+	@Size(min = 4, max = 10, message="O valode deve estar entre 4 e 10")
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	@Column(name="alb_name", length = 10, nullable = false)
 	private String nome;
 	
@@ -39,8 +51,12 @@ public class Album {
 	@Column(name="alb_ano_lancamento", nullable = false)
 	private int anoDeLancamento;
 	
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "album", fetch = FetchType.EAGER, cascade = CascadeType.MERGE, orphanRemoval = true)
 	private Set<Musica> musica;
+=======
+	
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	
 	public long getId() {
 		return id;
@@ -60,6 +76,7 @@ public class Album {
 	public void setAnoDeLancamento(int anoDeLancamento) {
 		this.anoDeLancamento = anoDeLancamento;
 	}
+<<<<<<< HEAD
 	
 	public Set<Musica> getMusica() {
 		return musica;
@@ -67,6 +84,8 @@ public class Album {
 	public void setMusica(Set<Musica> musica) {
 		this.musica = musica;
 	}
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 
 	
 

@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ResponseBody;
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 
 import br.com.treinaweb.springmvc.domain.Album;
 import br.com.treinaweb.springmvc.repositories.RepositorioAlbum;
@@ -22,11 +25,19 @@ import br.com.treinaweb.springmvc.repositories.RepositorioAlbum;
 public class AlbunsController {
 	
 	@Autowired
+<<<<<<< HEAD
 	private RepositorioAlbum repositorio;
 	
 	@RequestMapping(value="/listar", method = RequestMethod.GET)
 	public String listar(Model model){
 		List<Album> albuns = repositorio.findAll();
+=======
+	private RepositorioAlbum respositorio;
+	
+	@RequestMapping(value="/listar", method = RequestMethod.GET)
+	public String listar(Model model){
+		List<Album> albuns = respositorio.findAll();
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 		model.addAttribute("albuns", albuns);
 		return "album.listar.tiles";
 	}
@@ -44,14 +55,23 @@ public class AlbunsController {
 			return "album.adicionar.tiles";
 		}
 		
+<<<<<<< HEAD
 		repositorio.save(novoAlbum);
+=======
+		respositorio.save(novoAlbum);
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 		return "redirect:/albuns/listar";
 	}
 	
 	@RequestMapping(value="alterar/{id}", method = RequestMethod.GET)
 	public String alterar(@PathVariable("id") Long id, Model model){
+<<<<<<< HEAD
 		Album albumASerAlterado = repositorio.findOne(id);
 		model.addAttribute("album", albumASerAlterado);
+=======
+		Album albumASerAlterado = respositorio.findOne(id);
+		model.addAttribute("albuem", albumASerAlterado);
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 		return "album.alterar.tiles";	
 	}
 
@@ -60,12 +80,18 @@ public class AlbunsController {
 		if(result.hasErrors()){
 			return "album.alterar.tiles";
 		}
+<<<<<<< HEAD
 		repositorio.save(album);
 		return "redirect:/albuns/listar";
+=======
+		respositorio.save(album);
+		return "redirect:/albuns/listtar";
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	}
 	
 	@RequestMapping(value="/excluir/{id}", method = RequestMethod.GET)
 	public String excluir(@PathVariable("id") Long id){
+<<<<<<< HEAD
 		repositorio.delete(id);
 		return "redirect:/albuns/listar";
 	}
@@ -74,6 +100,12 @@ public class AlbunsController {
 	public @ResponseBody Album pesquisarPorNome(@PathVariable("nome") String nomeAlbum){
 		return repositorio.findByNome(nomeAlbum);
 	}
+=======
+		respositorio.delete(id);
+		return "redirect:/albuns/listar";
+	}
+	
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	
 }
 

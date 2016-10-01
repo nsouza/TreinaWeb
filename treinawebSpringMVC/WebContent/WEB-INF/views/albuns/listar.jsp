@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<<<<<<< HEAD
 <%@ page buffer="8192kb" %>
 <h2>Listagem de Albuns</h2>
 <br />
@@ -12,6 +13,11 @@
 	</div>
 </div>
 <table class="table" id="tbl-albuns">
+=======
+<h2>Listagem de Albuns</h2>
+<br />
+<table class="table">
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	<thead>
 		<th>ID</th>
 		<th>Nome do Album</th>
@@ -26,7 +32,11 @@
 					<td>${album.nome}</td>
 					<td>${album.anoDeLancamento}</td>
 					<td>
+<<<<<<< HEAD
 						<a href="/treinawebSpringMVC/albuns/alterar/${album.id}">Alterar</a> | 
+=======
+						<a href="/treinawebSpringMVC/albuns/alterar/${album.id}">Alterar</a>|
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 						<a href="/treinawebSpringMVC/albuns/excluir/${album.id}">Excluir</a>
 					</td>
 				</tr>
@@ -39,6 +49,7 @@
 
 
 
+<<<<<<< HEAD
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#btn-pesquisar').click(function(){
@@ -67,3 +78,5 @@ $(document).ready(function(){
 	});
 });
 </script>
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56

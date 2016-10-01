@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/var/www/html/autenticacao"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="FilterByLocation"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/treinawebSpringMVC/WebContent/WEB-INF/views/layout/header.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/treinawebSpringMVC/src/br/com/treinaweb/springmvc/domain/Album.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/treinawebSpringMVC/src/br/com/treinaweb/springmvc/controllers/AlbunsController.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/treinawebSpringMVC/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/resources/views/cart/cart.blade.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Controllers/Adm/CartController.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Models/Cart.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Controllers/Auth/StandardController.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Controllers/Adm/CategoryController.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Routes/routes.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Controllers/Adm/CheckoutController.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Http/Routes/user.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/autenticacao/app/Models/OrderItem.php&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="592" key="DIALOG_WIDTH"/>
+			<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="467" key="DIALOG_HEIGHT"/>
+			<item value="38" key="DIALOG_X_ORIGIN"/>
+			<item value="-66" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+</section>

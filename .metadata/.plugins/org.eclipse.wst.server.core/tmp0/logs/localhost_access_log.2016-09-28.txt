@@ -1,0 +1,17 @@
+127.0.0.1 - - [28/Sep/2016:14:28:36 -0300] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:52 -0300] "GET /treinawebSpringMVC/albuns/adicionar HTTP/1.1" 200 3240
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:52 -0300] "GET /treinawebSpringMVC/resources/js/jquery.min.js;jsessionid=1FB9E3FFDB5E0B73C7E402DF2AE72748 HTTP/1.1" 200 86350
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:52 -0300] "GET /treinawebSpringMVC/resources/css/bootstrap.min.css;jsessionid=1FB9E3FFDB5E0B73C7E402DF2AE72748 HTTP/1.1" 200 121200
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:52 -0300] "GET /treinawebSpringMVC/resources/js/bootstrap.min.js;jsessionid=1FB9E3FFDB5E0B73C7E402DF2AE72748 HTTP/1.1" 200 37045
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:52 -0300] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:28:55 -0300] "GET /treinawebSpringMVC/albuns/listar HTTP/1.1" 200 4273
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:29:04 -0300] "GET /treinawebSpringMVC/albuns/porNome/album%201 HTTP/1.1" 200 72030
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:29:31 -0300] "GET /treinawebSpringMVC/resources/css/bootstrap.min.css.map HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:31:50 -0300] "GET /treinawebSpringMVC/albuns/porNome/album%201 HTTP/1.1" 200 72030
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:50 -0300] "GET /treinawebSpringMVC/albuns/listar HTTP/1.1" 200 4253
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:50 -0300] "GET /treinawebSpringMVC/resources/js/jquery.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:50 -0300] "GET /treinawebSpringMVC/resources/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:50 -0300] "GET /treinawebSpringMVC/resources/js/bootstrap.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:50 -0300] "GET /treinawebSpringMVC/resources/css/bootstrap.min.css.map HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:35:51 -0300] "GET /treinawebSpringMVC/albuns/porNome/ HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [28/Sep/2016:14:46:36 -0300] "GET /treinawebSpringMVC/albuns/alterar/1 HTTP/1.1" 200 3580

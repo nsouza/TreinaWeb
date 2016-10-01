@@ -26,6 +26,7 @@
 		<put-attribute name="title" value="TreinaWeb  Exibição de Albun"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/albuns/listar.jsp"></put-attribute>
 	</definition>
+<<<<<<< HEAD
 	
 	<!-- Musica -->
 	<!-- Mostra o retorno das minhas action -->
@@ -47,6 +48,8 @@
 		<put-attribute name="title" value="TreinaWeb  Exibição de Musicas"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/musicas/listar.jsp"></put-attribute>
 	</definition>
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 </tiles-definitions>
 
 

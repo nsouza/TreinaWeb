@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -39,3 +40,8 @@
 	</div>
 	<!-- /.container-fluid -->
 </nav>
+=======
+<div style="width: 100%; text-align: center">
+	<b>Aqui é o menu alterado</b>
+</div>
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56

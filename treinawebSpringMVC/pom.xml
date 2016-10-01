@@ -2,7 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.treinaweb</groupId>
+<<<<<<< HEAD
 	<artifactId>treinawebSpringMVC</artifactId>
+=======
+	<artifactId>treinaweb-spring-mvc</artifactId>
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
@@ -72,6 +76,7 @@
 			<artifactId>tiles-jsp</artifactId>
 			<version>3.0.5</version>
 		</dependency>
+<<<<<<< HEAD
 		<!-- JACKON PARA LER JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -83,6 +88,8 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.7.6</version>
 		</dependency>
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 
 		<!-- SPRING DATA -->
 		<dependency>
@@ -107,12 +114,17 @@
 			<version>1.1.7</version>
 		</dependency>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.1.1</version>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- Apache Commons FileUpload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -131,5 +143,7 @@
 
 
 
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	</dependencies>
 </project>

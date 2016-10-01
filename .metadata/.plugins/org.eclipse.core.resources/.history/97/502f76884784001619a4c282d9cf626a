@@ -1,0 +1,74 @@
+<?php 
+
+namespace App\Models;
+use App\Models\Product;
+use App\Models\ProductImage;
+
+
+class Cart
+{
+	private $items;
+	private $product;
+	
+	public function __construct(Product $product)
+	{
+		$this->items = [];
+		$this->product = $product;
+	}
+	
+	public function add(Product $product)
+	{
+		$id = $product->id;
+		
+		$imagem = $product->listProduct($id);//dd($product->images);
+		$img = 'imgs/'.$image->ImagePath;
+		
+		dd($img);
+		//dd($imagem);
+		
+		//dd($product->images[1]->imagePath);
+			
+	  if(count($product->images))
+           $img = 'imgs/'.$product->images->first()->imagePath;
+	  		         
+        else
+            $img = 'images/no-img.jpg';
+			
+            
+       
+		//dd($product->images->first()->ImagePath);
+            
+		$this->items += [
+			
+			$id => [
+				'qtd' => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']++ : 1,
+				'price' => $product->price, 
+				'name' => $product->name,
+				'img'=> $img
+							
+			]	
+		];
+				
+		return $this->items;
+	}
+	
+	public function remove($id)
+	{
+		 unset($this->items[$id]);
+	}
+	
+	public function all()
+	{
+		return $this->items;	
+	}
+	
+	public function getTotal()
+	{
+		$total = 0;
+		foreach ($this->items as $items){
+			$total += $items['qtd'] * $items['price'];
+		}
+		
+		return $total;
+	}
+}

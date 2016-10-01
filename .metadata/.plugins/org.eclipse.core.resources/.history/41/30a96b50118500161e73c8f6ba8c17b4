@@ -1,0 +1,125 @@
+<?php
+//use DB;
+use App\Models\Category;
+use App\Models\Genre;
+
+//Rotas fora do Grupo
+Route::get('/',['as'=>'home.client', 'uses'=>'HomeController@index']);
+Route::get('/list1-product/{id}/{idGenre}',['as'=>'list.category.product','uses'=>'Adm\CategoryController@listProducts']);
+Route::get('/cart', ['as'=>'cart','uses'=>'Adm\CartController@index']);
+Route::get('/cart/add/{id}', ['as'=>'cart.add','uses'=>'Adm\CartController@add']);
+Route::get('/cart/destroy/{id}', ['as'=>'cart.destroy','uses'=>'Adm\CartController@destroy']);
+
+Route::get('/checkout/placeorder', ['as'=>'checkout.place','uses'=>'Adm\CheckoutController@place']);
+Route::get('/account/order', ['as'=>'account.order','uses'=>'Adm\AccountController@orders']);
+
+
+//****************************************************************************************************************
+
+Route::group(['prefix' => 'auth', 'middleware' => [], 'web'], function () {
+
+	Route::post('/loginUser', 'Auth\StandardController@loginUser');
+	Route::get('/login', 'Auth\AuthController@showLoginForm');
+	Route::get('/register', 'Auth\StandardController@showRegistrationForm');
+	//Route::post('/register', 'Auth\StandardController@registerUser');
+	Route::post('/register', 'Auth\AuthController@register');
+	Route::get('/logout', 'Auth\StandardController@logout');
+
+});
+
+Route::group(['prefix' => 'adm', 'middleware' => [], 'web_adm'], function () {
+
+	//Rotas para Categorias
+	Route::get('/', ['as' => 'adm.index', 'uses' => 'Adm\CategoryController@index']);
+	Route::get('/cadastrar', ['as' => 'adm.showform', 'uses' => 'Adm\CategoryController@showForm']);
+	Route::post('/cadastrar', ['as' => 'adm.save', 'uses' => 'Adm\CategoryController@save']);
+	Route::get('editar/{id}', ['as' => 'adm.edit', 'uses' => 'Adm\CategoryController@showEdit']);
+	Route::post('/editar/{id}', ['as' => 'adm.update', 'uses' => 'Adm\CategoryController@update']);
+	Route::get('/delete/{id}', ['as' => 'adm.delete', 'uses' => 'Adm\CategoryController@showDelete']);
+	Route::get('/excluir/{id}', ['as' => 'adm.deletefinal', 'uses' => 'Adm\CategoryController@delete']);
+	Route::post('/pesquisar', ['as' => 'adm.search', 'uses' => 'Adm\CategoryController@search']);
+	Route::get('/details/{id}', ['as' => 'adm.detail', 'uses' => 'Adm\CategoryController@detail']);
+	
+	
+	Route::group(['prefix'=> 'group'],function(){
+		Route::get('/', ['as' => 'adm.index', 'uses' => 'Adm\CategoryController@index']);
+		Route::get('/cadastrar', ['as' => 'adm.showform', 'uses' => 'Adm\CategoryController@showForm']);
+		Route::post('/cadastrar', ['as' => 'adm.save', 'uses' => 'Adm\CategoryController@save']);
+		Route::get('editar/{id}', ['as' => 'adm.edit', 'uses' => 'Adm\CategoryController@showEdit']);
+		Route::post('/editar/{id}', ['as' => 'adm.update', 'uses' => 'Adm\CategoryController@update']);
+		Route::get('/delete/{id}', ['as' => 'adm.delete', 'uses' => 'Adm\CategoryController@showDelete']);
+		Route::get('/excluir/{id}', ['as' => 'adm.deletefinal', 'uses' => 'Adm\CategoryController@delete']);
+		Route::post('/pesquisar', ['as' => 'adm.search', 'uses' => 'Adm\CategoryController@search']);
+		Route::get('/details/{id}', ['as' => 'adm.detail', 'uses' => 'Adm\CategoryController@detail']);
+		
+	});
+
+});
+
+Route::group(['prefix' => 'prod', 'middleware' => [], 'web_adm'], function () {
+
+	//Estilos Rotas para Produtos
+	Route::get('/', ['as' => 'prod.index', 'uses' => 'Adm\ProductController@index']);
+	Route::get('/cadastrar', ['as' => 'prod.showform', 'uses' => 'Adm\ProductController@showForm']);
+	Route::post('/cadastrar', ['as' => 'prod.save', 'uses' => 'Adm\ProductController@save']);
+	Route::get('editar/{id}', ['as' => 'prod.edit', 'uses' => 'Adm\ProductController@showEdit']);
+	Route::post('/editar/{id}', ['as' => 'prod.update', 'uses' => 'Adm\ProductController@update']);
+	Route::get('/delete/{id}', ['as' => 'prod.delete', 'uses' => 'Adm\ProductController@showDelete']);
+	Route::get('/excluir/{id}', ['as' => 'prod.deletefinal', 'uses' => 'Adm\ProductController@delete']);
+	Route::post('/pesquisar', ['as' => 'prod.search', 'uses' => 'Adm\ProductController@search']);
+	Route::get('/details/{id}', ['as' => 'prod.detail', 'uses' => 'Adm\ProductController@detail']);
+
+	Route::group(['prefix' => 'images'], function () {
+
+		Route::get('{id}/product', ['as' => 'products.images', 'uses' => 'Adm\ProductController@images']);
+		Route::get('product/{id}/product', ['as' => 'products.images.create', 'uses' => 'Adm\ProductController@createImage']);
+		Route::post('save/{id}/product', ['as' => 'products.images.save', 'uses' => 'Adm\ProductController@saveImage']);
+        Route::get('deleteImg/{id}/img', ['as' => 'products.images.deleteImg', 'uses' => 'Adm\ProductController@deleteImage']);
+	});
+
+});
+
+//Route::group(['prefix' => 'admin'], function () {
+
+/*
+
+hummm... depois te viro, deito de bumbum pra cima
+e entro em vc... te faço sentir meu peso, meu calor
+
+Route::post('/loginUser', ['middleware' => ['web'],'uses' => 'Auth\StandardController@loginUser']);
+Route::post('/logout', ['middleware' => ['web'],'uses' => 'Auth\StandardController@logout']);
+Route::get('/user', ['middleware' => ['web'],'uses' => 'Auth\StandardController@user']);
+Route::get('adm/register', ['middleware' => ['web'],'uses' => 'Auth\StandardController@showRegistrationForm']);
+Route::post('adm/register', ['middleware' => ['web'],'uses' => 'Auth\StandardController@showRegistrationForm']);
+
+Route::get('/logged', 'HomeController@user');
+Route::get('/adm/logged', 'CategoryControllerr@user');
+
+Route::post('adm/register', ['middleware' => ['web'],'uses' => 'Adm\AuthController@register']);
+
+Route::auth();
+
+Route::get('/error-logged', function () {
+return view('logged-error');
+});
+ */
+
+//}
+
+//Route::get('/', 'HomeController@index']);
+
+/*
+| Domain | Method   | URI                     | Name | Action                                                          | Middleware |
++--------+----------+-------------------------+------+-----------------------------------------------------------------+------------+
+|        | GET|HEAD | /                       |      | Closure                                                         | web        |
+|        | GET|HEAD | home                    |      | App\Http\Controllers\HomeController@index                       | web,auth   |
+|        | GET|HEAD | login                   |      | App\Http\Controllers\Auth\AuthController@showLoginForm          | web,guest  |
+|        | POST     | login                   |      | App\Http\Controllers\Auth\AuthController@login                  | web,guest  |
+|        | GET|HEAD | logout                  |      | App\Http\Controllers\Auth\AuthController@logout                 | web        |
+|        | POST     | password/email          |      | App\Http\Controllers\Auth\PasswordController@sendResetLinkEmail | web,guest  |
+|        | POST     | password/reset          |      | App\Http\Controllers\Auth\PasswordController@reset              | web,guest  |
+|        | GET|HEAD | password/reset/{token?} |      | App\Http\Controllers\Auth\PasswordController@showResetForm      | web,guest  |
+|        | GET|HEAD | register                |      | App\Http\Controllers\Auth\AuthController@showRegistrationForm   | web,guest  |
+|        | POST     | register                |      | App\Http\Controllers\Auth\AuthController@register               | web,guest  |
++--------+----------+-------------------------+------+-----------------------------------------------------------------+------------+
+ */

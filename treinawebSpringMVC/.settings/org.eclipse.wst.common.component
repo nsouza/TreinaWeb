@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="treinawebSpringMVC-0.0.1-SNAPSHOT">
+=======
+    <wb-module deploy-name="treinaweb-spring-mvc-0.0.1-SNAPSHOT">
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <property name="java-output-path" value="/treinawebSpringMVC/build/classes"/>
+<<<<<<< HEAD
         <property name="context-root" value="treinawebSpringMVC"/>
+=======
+        <property name="context-root" value="treinaweb-spring-mvc"/>
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
     </wb-module>
 </project-modules>

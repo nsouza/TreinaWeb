@@ -1,0 +1,4 @@
+br/com/treinaweb/springmvc/domain/Album.class
+br/com/treinaweb/springmvc/controllers/HelloController.class
+br/com/treinaweb/springmvc/repositories/RepositorioAlbum.class
+br/com/treinaweb/springmvc/controllers/AlbunsController.class

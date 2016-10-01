@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+<<<<<<< HEAD
 	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:context="http://www.springframework.org/schema/context"
+=======
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jpa = "http://www.springframework.org/schema/data/jpa"
 	xmlns:tx = "http://www.springframework.org/schema/data/tx"
@@ -27,6 +31,7 @@
 			value="org.springframework.web.servlet.view.tiles3.TilesView"></property>
 	</bean>
 	
+<<<<<<< HEAD
 	<!-- configuração para upload  -->
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<bean
@@ -46,6 +51,8 @@
 	</bean>
 	
 
+=======
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer ">
 		<property name="definitions">
@@ -80,7 +87,11 @@
 				<props>
 					<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
 					<prop key="hibernate.show_sql">true</prop>
+<<<<<<< HEAD
 					<prop key="hibernate.hbm2ddl.auto">update</prop>
+=======
+					<prop key="hibernate.hbm2ddl.outo">create</prop>
+>>>>>>> 9a612dfa21bcbe611938b2f65a0303ba1252ec56
 				</props>
 			</property>
 	</bean>
